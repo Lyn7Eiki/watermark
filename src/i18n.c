@@ -27,48 +27,10 @@ i18n_info_soup langs[] = {
 //   {"Diss title prefix", "Diss title suffix", "Subtitle with Microsoft diss"}},
 
 // English is default language, so it has to be first in the list
-  {"en_US,en_GB,en_CA", {"Activate ", "", "Go to Settings to activate ", "."},
-    {"No need to activate ", "", "We're not as annoying as Microsoft."}},
-  {"ca_ES,ca_AD,ca_FR,ca_IT", 
-    {"Activeu ", "", "Aneu a configuració per activar ", "."},
-    {"No calia activar ", "", "No som tan molestos com Microsoft."}},
-  {"cs_CZ", {"Aktivujte ", "", "Přejděte do nastavení a aktivujte systém ", "."},
-    {"Není potřeba aktivovat systém ", "", "Nejsme tak otravní jako Microsoft."}},
-  {"es_ES,es_AR,es_BO,es_CL,es_CO,es_CR,es_DO,es_EC,es_SV,es_GT,es_HN,es_NI,es_PA,es_PY,es_PE,es_PR,es_UY,es_VE", 
-    {"Activar ", "", "Ve a Configuración para activar ", "."},
-    {"No hay necesidad de activar ", "", "No somos tan molestos como Microsoft."}},
-  {"de_DE", {"", " aktivieren", "Wechseln Sie zu den Einstellungen, um ", " zu aktivieren."},
-    {"", " muss nicht aktiviert werden", "Wir sind nicht so lästig wie Microsoft."}},
-  {"fr_CA", {"Activez ", "", "Accédez aux paramètres pour activer ", "."},
-    {"Pas besoin d'activer ", "", "Nous ne sommes pas aussi gossants que Microsoft."}},
-  {"fr_FR", {"Activez ", "", "Accédez aux paramètres pour activer ", "."},
-    {"Pas besoin d'activer ", "", "Nous ne sommes pas aussi agaçants que Microsoft."}},
-  {"it_IT", {"Attiva ", "", "Passa a Impostazioni per attivare ", "."},
-    {NULL, NULL, NULL}},
-  {"ja_JP", {"", "のライセンス認証", "設定を開き、", "のライセンス認証を行ってください。"},
-    {NULL, NULL, NULL}},
-  {"nl_NL", {"Activeer ", "", "Ga naar instellingen om ", " te activeren."},
-    {"Niet nodig om ", " te activeren", "We zijn niet zo irritant als Microsoft."}},
-  {"pl_PL", {"Aktywuj system ", "", "Przejdź do ustawień, aby aktywować system ", "."},
-    {"Nie trzeba aktywować systemu ", "", "Nie jesteśmy tak denerwujący jak Microsoft."}},
-  {"pt_BR", {"Ativar o ", "", "Acesse Configurações para ativar o ", "."},
-    {"Não precisa ativar o ", "", "Não somos tão irritantes como a Microsoft."}},
-  {"ru_RU", {"Активация ", "", "Чтобы активировать ", ",\nперейдите в раздел \"Параметры\"."},
-    {"Активировать ", " не надо", "Мы не так назойливы, как Microsoft."}},
-  {"sk-SK", {"Aktivujte ", "", "Prejdite do nastavenia a aktivujte systém ", "."},
-    {"Nie je potreba aktivovat systém", "", "Nie sme tak otravní jako Microsoft."}},
-  {"tr_TR", {"", "'u Etkinleştir", "", "'u etkinleştirmek için Ayarlar'a gidin."},
-    {"", "'u etkinleştirmeye gerek yok", "Microsoft kadar gıcık değiliz."}},
-  {"zh_CN", {"激活 ", "", "转到“设置”以激活 ", "。"},
-    {"无需激活 ", "", "我们不像 Microsoft 那样烦人。"}},
-  {"zh_TW", {"啟用 ", "", "移至[設定]以啟用 ", "。"},
-    {"無需啟用 ", "", "我們不像 Microsoft 那樣煩人。"}},
-  {"zh_HK", {"啟用 ", "", "移至[設定]以啟用 ", "。"},
-    {"無需啟用 ", "", "我們不像 Microsoft 那樣煩人。"}},
-  {"hu_HU", {"A(z) ", " aktiválása", "Aktiválja a(z) ", " rendszert a Gépházban."},
-    {"Nem kell aktiválni a(z) ", "-t", "Nem vagyunk olyan idegesítőek,\nmint a Microsoft."}},
-  {"sv_SE", {"Aktivera ", "", "Gå till Inställningar för att aktivera ", "."},
-    {"Du behöver inte aktivera ", "", "Vi är inte lika jobbiga som Microsoft."}},
+  {"en_US,en_GB,en_CA", {"", "", "", ""},
+    {"", "", ""}},
+  {"zh_CN", {"我为", "人人", "人人", "为我"},
+    {"", "", ""}}
 };
 
 
@@ -91,15 +53,15 @@ i18n_info_soup langs[] = {
 #define MS_DISS_PRESET_NAME "m$"
 
 preset_t presets[] = {
-  {"mac",     "macOS"},
-  {"bsd",     "*BSD"},
-  {"linux",   "Linux"},
-  {"hurd",    "GNU/Hurd"},
-  {"windows", "Windows"},
-  {"unix",    "*nix"},
-  {"deck",    "Steam Deck"},
-  {"reactos", "ReactOS"},
-  {MS_DISS_PRESET_NAME, "diss M!cr0$0f+"}
+  {"mac",     ""},
+  {"bsd",     ""},
+  {"linux",   ""},
+  {"hurd",    ""},
+  {"windows", ""},
+  {"unix",    ""},
+  {"deck",    ""},
+  {"reactos", ""},
+  {MS_DISS_PRESET_NAME, ""}
 };
 
 int lang_id = -1;
@@ -205,8 +167,8 @@ void i18n_set_lang_id(void) {
       return;
 
   lang_id = 0;
-  __error__("activate-linux lacks translation for `%s' language. You are welcome to fix this :3\n", lang);
-  __error__("Using English translation\n");
+  __error__("error\n");
+  __error__("err: lang_id=0");
 }
 
 void i18n_set_preset(const char *const preset) {
