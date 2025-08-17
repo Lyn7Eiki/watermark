@@ -99,12 +99,11 @@ preset_t presets[] = {
   {"unix",    "*nix"},
   {"deck",    "Steam Deck"},
   {"reactos", "ReactOS"},
-  {"eiki", "林永树"},
   {MS_DISS_PRESET_NAME, "diss M!cr0$0f+"}
 };
 
-int lang_id = 0;
-int preset_id = "eiki";
+int lang_id = -1;
+int preset_id = DEFAULT_PRESET;
 
 bool match_lang_code(const char *lang_code, const char *lang) {
   int i = 0;
@@ -275,6 +274,3 @@ void i18n_list_presets(void) {
   #undef STYLE
   #undef HELP
 }
-
-lang_id = 0;
-preset_id = "eiki";
