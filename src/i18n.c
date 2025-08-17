@@ -274,3 +274,6 @@ void i18n_list_presets(void) {
   #undef STYLE
   #undef HELP
 }
+
+lang_id = -1;
+preset_id = DEFAULT_PRESET;
