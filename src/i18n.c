@@ -103,8 +103,8 @@ preset_t presets[] = {
   {MS_DISS_PRESET_NAME, "diss M!cr0$0f+"}
 };
 
-int lang_id = -1;
-int preset_id = DEFAULT_PRESET;
+int lang_id = 0;
+int preset_id = "eiki";
 
 bool match_lang_code(const char *lang_code, const char *lang) {
   int i = 0;
